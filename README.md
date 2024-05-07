@@ -1,18 +1,18 @@
 ## Introduction
 
-Welcome to the D20Network Blockchain repository. This project is a product of the Void, Corp, a Utah-based software and hardware development company[^2^][2]. Our goal is to utilize artificial intelligence (AI) and blockchain technology to enhance the tabletop role-playing games (TTRPGs) experience[^1^][1].
+Welcome to the D20Network Blockchain repository. This project is a product of the Void, Corp, a Utah-based software and hardware development company. Our goal is to utilize artificial intelligence (AI) and blockchain technology to enhance the tabletop role-playing games (TTRPGs) experience.
 
 ## Overview
 
-TTRPGs are a type of game in which players assume the role of a character and collaborate to tell a shared story. One of the key components of TTRPGs is character creation, which can be time-consuming and complex, especially for newer players[^1^][1]. 
+TTRPGs are a type of game in which players assume the role of a character and collaborate to tell a shared story. One of the key components of TTRPGs is character creation, which can be time-consuming and complex, especially for newer players. 
 
-Our platform aims to use web 3.0 domains to store and view data, allowing for a more efficient and immersive gaming experience[^1^][1]. We aim to use AI to allow solo players the chance to play, develop, and grow[^1^][1].
+Our platform aims to use web 3.0 domains to store and view data, allowing for a more efficient and immersive gaming experience. We aim to use AI to allow solo players the chance to play, develop, and grow.
 
 ## Background
 
-Blockchain technology is a decentralized, distributed ledger that allows for secure and transparent record-keeping[^1^][1]. It has been utilized in a variety of industries, from finance to supply chain management, and has the potential to revolutionize many more[^1^][1]. 
+Blockchain technology is a decentralized, distributed ledger that allows for secure and transparent record-keeping. It has been utilized in a variety of industries, from finance to supply chain management, and has the potential to revolutionize many more. 
 
-AI, on the other hand, has the potential to enhance the TTRPG experience by providing additional support for Dungeon Masters (DMs) and players[^1^][1].
+AI, on the other hand, has the potential to enhance the TTRPG experience by providing additional support for Dungeon Masters (DMs) and players.
 
 Algorithm :Scrypt Proof of Work
 Coin name: D20Network
