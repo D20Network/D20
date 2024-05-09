@@ -1,0 +1,108 @@
+Mine for blocks with your Raspberry Pi wallet and the following instructions.
+
+The tutorial is compatible with Raspbian 11 (bullseye) and above.
+
+Click the Terminal app icon in your dock.
+
+Update your Raspberry Pi with the following command:
+
+sudo apt-get update && sudo apt-get upgrade -y
+
+Disable the swap file on your Raspberry Pi with the following command:
+
+sudo dphys-swapfile swapoff
+
+Open nano.
+
+sudo nano /etc/dphys-swapfile
+
+Change the value "CONF_SWAPSIZE=100" with "CONF_SWAPSIZE=1024".
+
+Save the file with the keyboard shortcut ctrl + x.
+
+Re-initialize the swap file with the following command:
+
+sudo dphys-swapfile setup
+
+Start the swap file with the following command:
+
+sudo dphys-swapfile swapon
+
+Download the wallet of your coin with the following command:
+
+wget https://github.com/D20Network/D20/blob/main/d20network-qt-raspberry.tar.gz
+
+Type the following command to extract the tar file:
+
+tar -xzvf d20network-qt-raspberry.tar.gz
+
+Type the following command to install the wallet and tools for your coin:
+
+sudo mv qt/d20network-qt d20networkd d20network-cli d20network-tx /usr/bin/
+
+Create the data directory for your coin with the following command.
+
+mkdir $HOME/.d20network
+
+Open nano.
+
+nano $HOME/.d20network/d20network.conf -t
+
+Paste the following into nano.
+
+rpcuser=rpc_d20network
+rpcpassword=dR2oBQ3K1zYMZQtJFZeAerhWxaJ5Lqeq9J2
+rpcbind=127.0.0.1
+rpcallowip=127.0.0.1
+listen=1
+server=1
+addnode= Check the node list to add ips
+
+
+
+Save the file with the keyboard shortcut ctrl + x.
+
+Open nano.
+
+nano ~/Desktop/mine.sh -t
+
+Paste the following into nano.
+
+#!/bin/bash
+SCRIPT_PATH=`pwd`;
+cd $SCRIPT_PATH
+echo Press [CTRL+C] to stop mining.
+while :
+do
+ d20network-cli generatetoaddress 1 $(d20network-cli getnewaddress)
+done
+
+Save the file with the keyboard shortcut ctrl + x.
+
+Make the file executable.
+
+chmod +x ~/Desktop/mine.sh
+
+Open nano.
+
+nano ~/Desktop/D20Network-qt.sh -t
+
+Paste the following into nano.
+
+d20network-qt
+
+Save the file with the keyboard shortcut ctrl + x.
+
+Make the file executable.
+
+chmod +x ~/Desktop/D20Network-qt.sh
+
+Go to the desktop (GUI) of your Raspberry Pi.
+
+Open the file D20Network-qt.sh, press on the button "Execute" to start your wallet.
+
+Go back to the terminal and type the following command to create the wallet file for your desktop wallet:
+
+d20network-cli createwallet ""
+
+Go to the desktop, open the file mine.sh and press on the button "Execute in Terminal" to mine your first block.
