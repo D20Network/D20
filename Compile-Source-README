@@ -1,0 +1,103 @@
+sudo apt-get update && sudo apt-get upgrade -y
+
+Install the required dependencies with the following command:
+
+sudo apt-get install make automake cmake curl g++-multilib libtool binutils-gold bsdmainutils pkg-config python3 patch bison -y
+
+Create your source code directory with the following commands:
+
+cd ~/
+mkdir source_code
+cd source_code
+
+Download the source code of your coin with the following command:
+
+wget "https://github.com/D20Network/D20/blob/main/d20network-source.tar.gz
+Type the following command to extract the tar file:
+
+tar -xzvf d20network-source.tar.gz
+
+64-bit
+
+Build x86_64-pc-linux-gnu with the following commands:
+
+PATH=$(echo "$PATH" | sed -e 's/:\/mnt.*//g')
+cd depends
+make HOST=x86_64-pc-linux-gnu
+cd ..
+
+Type the following commands to compile your wallet for Ubuntu Linux.
+
+./autogen.sh
+CONFIG_SITE=$PWD/depends/x86_64-pc-linux-gnu/share/config.site ./configure --prefix=/
+make
+
+Type the following command to clean your source code:
+
+make clean
+
+32-bit
+
+Build i686-pc-linux-gnu with the following commands:
+
+PATH=$(echo "$PATH" | sed -e 's/:\/mnt.*//g')
+cd depends
+make HOST=i686-pc-linux-gnu
+cd ..
+
+Type the following commands to compile your wallet for Ubuntu Linux.
+
+./autogen.sh
+CONFIG_SITE=$PWD/depends/i686-pc-linux-gnu/share/config.site ./configure --prefix=/
+make
+
+The compiled wallet for Ubuntu Linux is located in the directory src/qt, the tools are located in the directory src.
+
+
+
+WINDOWS
+
+sudo apt-get update && sudo apt-get upgrade -y
+
+Install the required dependencies with the following command:
+
+sudo apt-get install make automake cmake curl g++-multilib libtool binutils-gold bsdmainutils pkg-config python3 patch bison -y
+
+Create your source code directory with the following commands:
+
+cd ~/
+mkdir source_code
+cd source_code
+
+Download the source code of your coin with the following command:
+
+wget "https://github.com/D20Network/D20/blob/main/d20network-source.tar.gz
+
+Type the following command to extract the tar file:
+
+tar -xzvf d20network-source.tar.gz
+
+64-bit
+
+Install the required dependencies with the following command:
+
+sudo apt-get install g++-mingw-w64-x86-64 -y
+
+Set the default x86_64-w64-mingw32-g++ compiler option to posix with the following command:
+
+sudo update-alternatives --set x86_64-w64-mingw32-g++ /usr/bin/x86_64-w64-mingw32-g++-posix
+
+Build x86_64-w64-mingw32 with the following commands:
+
+PATH=$(echo "$PATH" | sed -e 's/:\/mnt.*//g')
+cd depends
+make HOST=x86_64-w64-mingw32
+cd ..
+
+Type the following commands to compile your 64 bit wallet for Microsoft Windows.
+
+./autogen.sh
+CONFIG_SITE=$PWD/depends/x86_64-w64-mingw32/share/config.site ./configure --prefix=/
+make
+
+The compiled wallet for Microsoft Windows is located in the directory src/qt, the tools are located in the directory src.
